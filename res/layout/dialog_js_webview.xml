@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout  
+	xmlns:android="http://schemas.android.com/apk/res/android"  
+	android:orientation="vertical"  
+	android:layout_width="match_parent" 
+	android:background="#FFFFFF" 
+	android:layout_height="match_parent">  
+	
+	<Button android:id="@+id/btn_sendto_js"  
+	    android:layout_width="fill_parent"  
+	    android:layout_height="wrap_content"  
+	    android:text="发送消息到JS"/>  
+	    
+	<LinearLayout 
+	    android:layout_width="fill_parent"  
+	    android:layout_height="wrap_content">
+	      
+	    <EditText android:id="@+id/edit_url"  
+	        android:layout_width="wrap_content"  
+	        android:layout_height="wrap_content"  
+	        android:layout_weight="1"/>  
+	        
+	    <Button android:id="@+id/btn_open"  
+	        android:layout_width="wrap_content"  
+	        android:layout_height="wrap_content"  
+	        android:text="浏览"/>  
+	</LinearLayout>  
+	
+	<com.ag.ui.web.jsutil.JsWebView 
+	    android:id="@+id/jwv_html"  
+	    android:layout_width="fill_parent"  
+	    android:layout_height="fill_parent" />  
+</LinearLayout>

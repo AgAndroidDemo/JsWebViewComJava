@@ -1,0 +1,38 @@
+<html>  
+<head>  
+	<title>JS与Java交互</title>  
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>  
+</head>  
+<body> 
+	<p>
+		<input type="button" value="发消息到Java" onclick="sendMsgToJava(1000, '来至JS的消息');" />  
+		<input type="button" value="调用alert" onclick="alert('hello')" />  
+	</p>
+	<p id="test">
+		<input type="button" value="测试Java发消息" onclick="onRecvMsgFromJava(1000, 'hello')" style="VISIBILITY: hidden" />
+	</p>
+	<p id="content"></p>  
+	 
+</body>  
+
+<script language="javascript">
+
+function onRecvMsgFromJava(cmd, param) 
+{ 
+	if(cmd == 1000)
+	{
+		var text = document.getElementById("content").innerHTML;
+		text += "onRecvMsgFromJava: param = "+param;
+		text +="<br>";
+		document.getElementById("content").innerHTML = text;
+	}		  
+}
+
+function sendMsgToJava(cmd, param)
+{
+	window.javaSender.sendMsgToJava(cmd, param);
+}
+
+</script>
+
+</html>  
